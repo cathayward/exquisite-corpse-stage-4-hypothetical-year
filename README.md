@@ -73,11 +73,17 @@ My issue with coding and art is that I find it very difficult to act on the idea
 *
 
 ### 🟦 Stage 4
-- Name/Alias:
-- Github account:
-- Published webpage for stage 4:
+- Name/Alias: Cat
+- Github account: https://github.com/cathayward
+- Published webpage for stage 4: https://cathayward.github.io/exquisite-corpse-stage-4-hypothetical-year/
 
-*... comments to be added here*
+Initially I struggled to figure out an idea for this game, however through rereading Christina's notes,I was inspired by the idea of an orange sky and blue mountains. I decided to make a game that focuses around the ideas of climate change, and how big corporations and powerful people appear to be willingly destroying the planet without a care. 
+
+The images were all created using the built-in AI within photoshop, and I gave it prompts that slowly killed the environment and turned the sky and mountains into the corresponding colours, creating an almost surreal image. 
+
+For the pathway, I didn't want to give the player the option to do something good, solidifying the idea that soon, no matter what we do, the damage to the planet will be completely irreversible. It puts them into the shoes of someone corrupt, with a lot of power to spare. I wanted the player to feel completely helpless, driven to try any other pathway just in case they are able to fix what they have done.
+
+When it came to actually coding the game, I really struggled initially to figure out how to do it, but with a little help from ChatGPT, and also looking at some of the other examples on the discussion board on Canvas (mainly Odette's), I was able to come up with something that I think accomplishes my goal.
 
 ### 🟪 Stage 5
 - Name/Alias:
