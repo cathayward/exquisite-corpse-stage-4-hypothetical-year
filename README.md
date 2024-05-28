@@ -77,6 +77,8 @@ My issue with coding and art is that I find it very difficult to act on the idea
 - Github account: https://github.com/cathayward
 - Published webpage for stage 4: https://cathayward.github.io/exquisite-corpse-stage-4-hypothetical-year/
 
+*Quick Note: The website does take a good second or two to load so just give it a little bit and it should work :)*
+
 Initially I struggled to figure out an idea for this game, however through rereading Christina's notes,I was inspired by the idea of an orange sky and blue mountains. I decided to make a game that focuses around the ideas of climate change, and how big corporations and powerful people appear to be willingly destroying the planet without a care. 
 
 The images were all created using the built-in AI within photoshop, and I gave it prompts that slowly killed the environment and turned the sky and mountains into the corresponding colours, creating an almost surreal image. 
