@@ -1,6 +1,6 @@
-let gameState = 'intro';
-let backgrounds = {};
-let locations = {
+let gameState = 'intro'; // Initial state of the game
+let backgrounds = {}; // Object to store background images for each state
+let locations = { // Object to store the text and next states for each location
     'intro': {
         text: "let me set the scene... \nyou are someone so very important \nbut... you feel as if you don't have enough power \nso you make some decisions \n let's see how this goes... \n \nhit 'a' to begin",
         next: {'a': 'a'}
@@ -55,19 +55,19 @@ let locations = {
     },
 };
 
-let resetButton;
-let displayText = '';
-let textIndex = 0;
-let textSpeed = 2;
-let textCounter = 0;
-let textComplete = false;
+let resetButton; // Button to reset the game
+let displayText = ''; // Text to be displayed
+let textIndex = 0; // Current index of the character being displayed
+let textSpeed = 2; // Speed of text display
+let textCounter = 0; // Counter to control the speed of text display
+let textComplete = false; // Flag to indicate if the text is fully displayed
 
 function preload() {
     for (let i = 1; i <= 15; i++) {
-        backgrounds[`b${i}`] = loadImage(`images/b${i}.png`);
+        backgrounds[`b${i}`] = loadImage(`images/b${i}.png`); // Load background images
     }
 
-    font = loadFont('type.ttf');
+    font = loadFont('type.ttf'); // Load font
 
     backgrounds['intro'] = backgrounds['b1'];
     backgrounds['a'] = backgrounds['b2'];
@@ -86,33 +86,33 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    textAlign(LEFT, CENTER);
-    textSize(30);
-    fill(245, 208, 122);
-    strokeWeight(3);
-    stroke(0);
-    textFont(font);
-    resetButton = createButton('do you really want to try again?');
-    resetButton.position(windowWidth / 2 - 100, windowHeight - 100);
-    resetButton.mousePressed(resetGame);
-    resetButton.hide();
+    createCanvas(windowWidth, windowHeight); // Create canvas that fills the window
+    textAlign(LEFT, CENTER); // Set text alignment
+    textSize(30); // Set text size
+    fill(245, 208, 122); // Set text color
+    strokeWeight(3); // Set stroke weight for text
+    stroke(0); // Set stroke color for text
+    textFont(font); // Set the font
+    resetButton = createButton('do you really want to try again?'); // Create reset button
+    resetButton.position(windowWidth / 2 - 100, windowHeight - 100); // Position the reset button
+    resetButton.mousePressed(resetGame); // Set mousePressed event for reset button
+    resetButton.hide(); // Hide the reset button initially
 }
 
 function draw() {
-    image(backgrounds[gameState], 0, 0, windowWidth, windowHeight); // Ensure background image fits the entire canvas
+    image(backgrounds[gameState], 0, 0, windowWidth, windowHeight); // Display background image
 
     // Display the text letter by letter
     if (!textComplete) {
         if (textCounter % textSpeed === 0 && textIndex < locations[gameState].text.length) {
-            displayText += locations[gameState].text.charAt(textIndex);
+            displayText += locations[gameState].text.charAt(textIndex); // Add next character to displayText
             textIndex++;
         }
         if (textIndex >= locations[gameState].text.length) {
-            textComplete = true;
+            textComplete = true; // Text is fully displayed
             // Show reset button only at end states
             if (!locations[gameState].next) {
-                resetButton.show();
+                resetButton.show(); // Show reset button if there are no next states
             }
         }
         textCounter++;
@@ -120,33 +120,33 @@ function draw() {
 
     let textX = 50;
     let textY = 50;
-    text(displayText, textX, textY, windowWidth - 100, windowHeight - 100); // Ensure text fits within the canvas
+    text(displayText, textX, textY, windowWidth - 100, windowHeight - 100); // Display text
 }
 
 function keyPressed() {
     if (textComplete) {
-        let next = locations[gameState].next ? locations[gameState].next[key] : null;
+        let next = locations[gameState].next ? locations[gameState].next[key] : null; // Get next state based on key pressed
         if (next) {
-            gameState = next;
-            displayText = '';
-            textIndex = 0;
-            textComplete = false;
-            textCounter = 0;
-            resetButton.hide();
+            gameState = next; // Update gameState to next state
+            displayText = ''; // Reset displayText
+            textIndex = 0; // Reset textIndex
+            textComplete = false; // Set textComplete to false
+            textCounter = 0; // Reset textCounter
+            resetButton.hide(); // Hide reset button
         }
     }
 }
 
 function resetGame() {
-    gameState ='intro';
-    displayText = '';
-    textIndex = 0;
-    textComplete = false;
-    textCounter = 0;
-    resetButton.hide();
+    gameState = 'intro'; // Reset gameState to 'intro'
+    displayText = ''; // Reset displayText
+    textIndex = 0; // Reset textIndex
+    textComplete = false; // Set textComplete to false
+    textCounter = 0; // Reset textCounter
+    resetButton.hide(); // Hide reset button
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-    resetButton.position(windowWidth / 2 - 100, windowHeight / 2 + 170);
+    resizeCanvas(windowWidth, windowHeight); // Resize canvas when window is resized
+    resetButton.position(windowWidth / 2 - 100, windowHeight - 100); // Reposition reset button
 }
